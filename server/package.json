@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "firebase": "^9.6.7",
+    "node-fetch": "^2.6.7",
+    "request": "^2.88.2"
+  },
+  "type": "module",
+  "name": "milab",
+  "version": "1.0.0",
+  "description": "Barak And Omer Are Having Fun",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omer Lehrer & Barak Amzaleg",
+  "license": "ISC"
+}
