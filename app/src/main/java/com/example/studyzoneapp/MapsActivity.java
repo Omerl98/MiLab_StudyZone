@@ -90,9 +90,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Get the current location of the device and set position on the map
         getDeviceLocation();
         // Add a marker in Sydney and move the camera
-        LatLng sanjose = new LatLng(37.335480, -121.893028);
         addMarkers(mMap);
-        mMap.addMarker(new MarkerOptions().position(sanjose).title("IDC"));
+       // mMap.addMarker(new MarkerOptions().position(loc).title(title));
+       // mMap.addMarker(new MarkerOptions().position(loc).title(title));
+       // mMap.addMarker(new MarkerOptions().position(loc).title(title));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(32.0852999,34.78176759999999)).title("haroma_herzliya"));
+
         mMap.setOnMarkerClickListener(this);
     }
 
@@ -110,15 +113,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             for(int i = 0; i<zones.names().length(); i++){
                                 String title = zones.names().getString(i);
                                 JSONObject location = zones.getJSONObject(zones.names().getString(i)).getJSONObject("location");
-                                LatLng loc = new LatLng(location.getInt("latitude"),location.getInt("longitude"));
+                                LatLng loc = new LatLng(location.getDouble("latitude"),location.getDouble("longitude"));
                                 mMap.addMarker(new MarkerOptions().position(loc).title(title));
-                                Log.v("ZONES", "location" + location);
-                                Log.v("ZONES", "key = " + zones.names().getString(i) + " value = " + zones.getJSONObject(zones.names().getString(i)));
+                                Log.v("ZONES", "location:" + location + ", title: " + title);
                             }
-                            Log.i("MarkerInfo","Success");
+                            Log.i("ZONES","Success");
                         }
                         catch (JSONException e) {
-                            Log.i("MarkerInfo","Failed");
+                            Log.i("ZONES","Failed");
                         }
                     }
                 }, new Response.ErrorListener() {

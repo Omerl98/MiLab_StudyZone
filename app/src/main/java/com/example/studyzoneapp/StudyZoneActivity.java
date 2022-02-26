@@ -33,9 +33,7 @@ public class StudyZoneActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Log.i("MarkerInfo","HERE1");
         Bundle bundle = intent.getExtras();
-       // checkMarkerInfo();
-       // markerName = bundle.getString("NAME");
-       // price = bundle.getString("PRICE");
+
         TextView nameText = findViewById(R.id.name);
         nameText.setText("Name: " + bundle.getString("NAME"));
 

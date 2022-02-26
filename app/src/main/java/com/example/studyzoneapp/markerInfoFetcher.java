@@ -26,10 +26,10 @@ public class markerInfoFetcher {
         public String food;;
         public String crowded;;
         public String rating;;
-        public int lat;
-        public int lng;
+        public double lat;
+        public double lng;
 
-        public markerInfoResponse(boolean isError, String price, String food, String crowded, String rating, int lat, int lng) {
+        public markerInfoResponse(boolean isError, String price, String food, String crowded, String rating, double lat, double lng) {
             this.isError = isError;
             this.price = price;
             this.food = food;
@@ -61,7 +61,7 @@ public class markerInfoFetcher {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject location = response.getJSONObject("location");
-                            markerInfoFetcher.markerInfoResponse res = new markerInfoFetcher.markerInfoResponse(false, response.getString("price"), response.getString("food"), response.getString("crowded"), response.getString("totalRating"), location.getInt("latitude"), location.getInt("longitude"));
+                            markerInfoFetcher.markerInfoResponse res = new markerInfoFetcher.markerInfoResponse(false, response.getString("price"), response.getString("food"), response.getString("crowded"), response.getString("totalRating"), location.getDouble("latitude"), location.getDouble("longitude"));
                             Log.i("MarkerInfo","Success");
                             listener.onResponse(res);
                         }
