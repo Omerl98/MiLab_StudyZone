@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button loginButton = findViewById(R.id.login_button);
-        Button myButton = findViewById(R.id.my_button);
         Button registerButton = findViewById(R.id.register_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,13 +24,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
