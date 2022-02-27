@@ -18,7 +18,7 @@ tools:context=".MainActivity">
 
 
     <Button
-        android:id="@+id/addnotebutton"
+        android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/map"
